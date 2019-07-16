@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="postgres-jdbc-16bfc7e1a68-4a333444cc42f4f3" provider="postgresql" driver="postgres-jdbc" name="PostgreSQL - dvdrental" save-password="true" read-only="false">
+		<connection host="localhost" port="2904" server="" database="dvdrental" url="jdbc:postgresql://localhost:2904/dvdrental" user="postgres" password="AwsVNEZRQQVl8w==" home="postgresql-x64-11" type="dev">
+			<property name="connectTimeout" value="20"/>
+			<property name="loginTimeout" value="20"/>
+			<provider-property name="@dbeaver-show-non-default-db@" value="false"/>
+			<provider-property name="@dbeaver-show-template-db@" value="false"/>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>

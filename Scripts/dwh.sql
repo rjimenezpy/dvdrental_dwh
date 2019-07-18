@@ -62,8 +62,8 @@ create table dim_actor(
 create table dim_pelicula(
 	id_pelicula int not null,
 	descripcion varchar(255) not null,
-	anho_lanzamiento 
-	duracion
+	anho_lanzamiento integer not null, 
+	duracion smallint not null,
 	fecha_insercion date not null,
 	fecha_actualizacion date not null
 );

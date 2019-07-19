@@ -68,4 +68,24 @@ create table dim_pelicula(
 	fecha_actualizacion date not null
 );
 
+-- dim_tiempo
+CREATE TABLE "DWH".dim_tiempo (
+	id_tiempo int4 NOT NULL,
+	fecha date NOT NULL,
+	dia int2 NOT null,
+	mes int2 NOT NULL,
+	mes_texto varchar (20) not null,
+	semana int2 not null,
+	anho int2 NOT NULL,
+	dia_semana int2 not null,
+	dia_semana_texto varchar (10) not null,
+	trimestre int2 not null,
+	trimestre_texto varchar (20)not null,
+	cuatrimestre int2 not null,
+	cuatrimestre_texto varchar (20) not null,
+	semestre int2 not null,
+	semestre_texto varchar (20) not null,
+	estacion int2 not null
+);
+
 

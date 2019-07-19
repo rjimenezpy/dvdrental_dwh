@@ -87,5 +87,11 @@ CREATE TABLE "DWH".dim_tiempo (
 	semestre_texto varchar (20) not null,
 	estacion int2 not null
 );
+ -- fac_alquiler
+ CREATE TABLE "DWH".fac_alquiler (
+	cantidad int4 NOT NULL,
+	monto_pago int4 NOT NULL
+);
+
 
 

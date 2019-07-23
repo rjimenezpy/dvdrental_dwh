@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="168,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database">
+</database>
+
+<schema name="public" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="fact_alquiler">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="860" y="20"/>
+	<column name="cantida">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="monto_pago">
+		<type name="int2" length="0"/>
+	</column>
+</table>
+
+<table name="dim_personal">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="220" y="300"/>
+	<column name="id_personal" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="apellidos">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="direccion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="ciudad">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="pais">
+		<type name="varchar" length="30"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dim_personal_pk" type="pk-constr" table="public.dim_personal">
+		<columns names="id_personal" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_sucursal">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="260" y="40"/>
+	<column name="nombre">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="direccion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="ciudad">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="id_sucursal" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="pais">
+		<type name="varchar" length="30"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dim_sucursal_pk" type="pk-constr" table="public.dim_sucursal">
+		<columns names="id_sucursal" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_tiempo">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1600" y="40"/>
+	<column name="id_tiempo" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="fecha">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dia">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="mes">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="mes_texto">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="semana">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="anho">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dia_semana_texto">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="estacion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="dia_semana">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="trimestre">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="trimestre_texto">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="cuatrimestre">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cuatrimestre_texto">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="semestre">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="semestre_texto">
+		<type name="varchar" length="40"/>
+	</column>
+	<constraint name="dim_tiempo_pk" type="pk-constr" table="public.dim_tiempo">
+		<columns names="id_tiempo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_cliente">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="760" y="660"/>
+	<column name="id_cliente" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="apellido">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="direccion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="ciudad">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="pais">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="smallint" length="0"/>
+	</column>
+	<constraint name="dim_cliente_pk" type="pk-constr" table="public.dim_cliente">
+		<columns names="id_cliente" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_lenguaje">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1360" y="720"/>
+	<column name="id_lenguaje" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dim_lenguaje_pk" type="pk-constr" table="public.dim_lenguaje">
+		<columns names="id_lenguaje" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_categoria">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1660" y="600"/>
+	<column name="id_categoria" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="40"/>
+	</column>
+	<constraint name="dim_categoria_pk" type="pk-constr" table="public.dim_categoria">
+		<columns names="id_categoria" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_actor">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1660" y="420"/>
+	<column name="id_actor" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="apellido">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dim_actor_pk" type="pk-constr" table="public.dim_actor">
+		<columns names="id_actor" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dim_pelicula">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="280" y="620"/>
+	<column name="id_pelicula" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="anho_lanzamiento">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="duracion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_insercion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_actualizacion">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dim_pelicula_pk" type="pk-constr" table="public.dim_pelicula">
+		<columns names="id_pelicula" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="dim_sucursal_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d780b7"
+	 src-table="public.dim_sucursal"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_personal_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#be0502"
+	 src-table="public.dim_personal"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_lenguaje_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#b946c0"
+	 src-table="public.dim_lenguaje"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_tiempo_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#bbe8d3"
+	 src-table="public.dim_tiempo"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_pelicula_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#661074"
+	 src-table="public.dim_pelicula"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_actor_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#0bd8be"
+	 src-table="public.dim_actor"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_categoria_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#c6d50d"
+	 src-table="public.dim_categoria"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="dim_cliente_has_many_fact_alquiler" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#174fc0"
+	 src-table="public.dim_cliente"
+	 dst-table="public.fact_alquiler"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
